@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="header__logo">
-            <img src="../assets/logo.png" alt="">
+            <img @click="clickLogo" src="../assets/logo.png" alt="">
         </div>
         <div class="header__search">
             <input class="keywordInput header__keywordInput" v-model="keywords" type="text" placeholder="輸入關鍵字">
@@ -11,16 +11,21 @@
 
 <script>
 export default {
-    data() {
-        return {
-            keywords: ''
-        }
-    },
-    watch: {
-        keywords(val) {
-            this.$emit('update-keywords', val);
-        }
+  data() {
+    return {
+      keywords: ''
     }
+  },
+  watch: {
+    keywords(val) {
+      this.$emit('update-keywords', val);
+    }
+  },
+  methods: {
+    clickLogo() {
+      this.$emit('click-logo');
+    }
+  }
 }
 </script>
 
@@ -43,6 +48,7 @@ $main-purple: #9013fe;
   align-items: center;
   > img {
     width: 130px;
+    cursor: pointer;
   }
   @media screen and (max-width: 769px) {
     flex: 50px;

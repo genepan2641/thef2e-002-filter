@@ -2,6 +2,7 @@
   <div id="app">
     <app-header 
 		ref="appHeader"
+		@click-logo="clickLogo"
 		@update-keywords="updateKeywords">
 	</app-header>
 	<div class="body container">
@@ -115,6 +116,9 @@ export default {
 				}
 			}
 			this.allRegion = arr;
+		},
+		clickLogo() {
+			this.isViewingArticle = false;
 		},
 		clickItem(index) {
 			console.log(index);
