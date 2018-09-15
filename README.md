@@ -1,5 +1,7 @@
 # w2-filter
 
+[Demo](https://genepan2641.github.io/thef2e-002-filter/)
+
 > A Vue.js project
 
 ## Build Setup
